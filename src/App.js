@@ -15,8 +15,6 @@ function App() {
   const [currentStep, setCurrentStep] = useState(1);
   const [loading, setLoading] = useState(true);
 
-  console.log(loading);
-
   const steps = useMemo(
     () => ["Profession", "Interest", "demo", "Maths", "demo", "Complete"],
     []

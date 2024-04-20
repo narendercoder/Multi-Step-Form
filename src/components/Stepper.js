@@ -7,7 +7,6 @@ const Stepper = ({ handleClick, currentStep, steps }) => {
   
     const updateStep = (stepNumber, steps) => {
       const newSteps = [...steps];
-      console.log(newSteps);
       let count = 0;
       while (count < newSteps.length) {
         //current step

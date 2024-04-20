@@ -2,20 +2,16 @@ import React, { useState } from "react";
 import { data3 } from "../config/data";
 import { RadioGroup } from "@headlessui/react";
 import { useStepperContext } from "../contexts/StepperContext";
-import { useEffect } from "react";
 
 const Component4 = () => {
   const [selected, setSelected] = useState(data3[0]);
   const { userData, setUserData } = useStepperContext();
 
-  const handleChange = (value) => {
+  const handleClick = (value) => {
     setUserData({ ...userData, maths: value });
   };
 
-  useEffect(() => {
-    handleChange(selected.name);
-  }, [selected]);
-  console.log(userData)
+
   return (
     <div className="relative flex justify-center items-center min-h-[62vh]">
       <RadioGroup value={selected} onChange={setSelected}>
@@ -30,6 +26,7 @@ const Component4 = () => {
               <RadioGroup.Option
                 key={item.id}
                 value={item}
+                onClick={()=>handleClick(item.name)}
                 className={({ active, checked }) =>
                   `${active ? " border-[#F2B135] shadow-md " : " "}${
                     checked ? "border-[#F2B135] shadow-md" : "border-[#E6E6E6]"
