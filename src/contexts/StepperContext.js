@@ -1,5 +1,4 @@
 import { createContext, useContext, useState } from "react";
-import { profession } from "../config/data";
 
 const StepperContext = createContext({ userData: "", setUserData: null });
 
